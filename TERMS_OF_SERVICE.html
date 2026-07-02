@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1Mile Terms of Service</title>
+  <meta name="description" content="1Mile Terms of Service — Rules, disclaimers, and usage terms for the 1Mile Android app serving Purulia district." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-primary: #0b0f1a;
+      --bg-card: #161d2e;
+      --accent: #4f8ef7;
+      --accent-2: #7c3aed;
+      --accent-soft: rgba(79, 142, 247, 0.12);
+      --accent-glow: rgba(79, 142, 247, 0.22);
+      --text-primary: #f0f4ff;
+      --text-secondary: #94a3c4;
+      --text-muted: #5a6a8a;
+      --border: rgba(79, 142, 247, 0.15);
+      --border-soft: rgba(255, 255, 255, 0.06);
+      --radius-lg: 16px;
+      --radius-md: 10px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 15% 5%, rgba(79,142,247,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 85% 85%, rgba(124,58,237,0.07) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .wrapper {
+      position: relative;
+      z-index: 1;
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* ── Header ── */
+    .page-header {
+      text-align: center;
+      margin-bottom: 56px;
+      animation: fadeDown 0.6s ease both;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent-soft);
+      border: 1px solid var(--border);
+      color: var(--accent);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+    }
+    .badge svg { width: 14px; height: 14px; flex-shrink: 0; }
+    .page-header h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      background: linear-gradient(135deg, #f0f4ff 0%, #4f8ef7 55%, #7c3aed 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+    .page-header .meta {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .page-header .meta::before,
+    .page-header .meta::after {
+      content: '';
+      display: block;
+      height: 1px;
+      width: 40px;
+      background: var(--border-soft);
+    }
+
+    /* ── TOC ── */
+    .toc {
+      background: var(--bg-card);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-lg);
+      padding: 28px 32px;
+      margin-bottom: 40px;
+      animation: fadeUp 0.5s 0.1s ease both;
+    }
+    .toc-title {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+    .toc ol {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 24px;
+    }
+    @media (max-width: 520px) { .toc ol { grid-template-columns: 1fr; } }
+    .toc ol li a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.875rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 0;
+      transition: color 0.2s;
+    }
+    .toc ol li a:hover { color: var(--accent); }
+    .toc ol li a .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 22px;
+      height: 22px;
+      background: var(--accent-soft);
+      border-radius: 50%;
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* ── Intro notice ── */
+    .notice {
+      background: linear-gradient(135deg, rgba(79,142,247,0.08), rgba(124,58,237,0.08));
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px 28px;
+      margin-bottom: 40px;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      animation: fadeUp 0.5s 0.15s ease both;
+    }
+    .notice strong { color: var(--text-primary); }
+
+    /* ── Warn box ── */
+    .warn-box {
+      background: rgba(234,179,8,0.07);
+      border: 1px solid rgba(234,179,8,0.25);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      margin: 16px 0;
+      font-size: 0.875rem;
+      color: #f5d060;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+    .warn-box svg { flex-shrink: 0; margin-top: 2px; }
+
+    /* ── Info box ── */
+    .info-box {
+      background: rgba(79,142,247,0.07);
+      border: 1px solid rgba(79,142,247,0.2);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      margin: 16px 0;
+      font-size: 0.875rem;
+      color: #93c5fd;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+    .info-box svg { flex-shrink: 0; margin-top: 2px; }
+
+    /* ── Caution box ── */
+    .caution-box {
+      background: rgba(239,68,68,0.07);
+      border: 1px solid rgba(239,68,68,0.22);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      margin: 16px 0;
+      font-size: 0.875rem;
+      color: #fca5a5;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+    .caution-box svg { flex-shrink: 0; margin-top: 2px; }
+
+    /* ── Section ── */
+    .section {
+      background: var(--bg-card);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-lg);
+      padding: 32px 36px;
+      margin-bottom: 24px;
+      transition: border-color 0.25s, box-shadow 0.25s;
+      animation: fadeUp 0.5s ease both;
+    }
+    .section:hover {
+      border-color: var(--border);
+      box-shadow: 0 4px 32px var(--accent-glow);
+    }
+    @media (max-width: 600px) { .section { padding: 24px 20px; } }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+    .section-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 36px;
+      height: 36px;
+      padding: 0 8px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      border-radius: 10px;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 0.82rem;
+      color: #fff;
+      flex-shrink: 0;
+      box-shadow: 0 0 14px var(--accent-glow);
+    }
+    .section-title h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+    p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+    }
+    p:last-child { margin-bottom: 0; }
+    ul {
+      list-style: none;
+      margin: 10px 0 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    ul li {
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+      padding-left: 20px;
+      position: relative;
+    }
+    ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      opacity: 0.7;
+    }
+    strong { color: var(--text-primary); font-weight: 600; }
+    hr { border: none; border-top: 1px solid var(--border-soft); margin: 20px 0; }
+    .placeholder {
+      background: rgba(234,179,8,0.12);
+      border: 1px solid rgba(234,179,8,0.3);
+      color: #f5d060;
+      border-radius: 4px;
+      padding: 1px 6px;
+      font-size: 0.85em;
+      font-style: italic;
+    }
+
+    /* ── Highlight pill ── */
+    .pill {
+      display: inline-block;
+      background: rgba(79,142,247,0.13);
+      border: 1px solid rgba(79,142,247,0.25);
+      color: #93c5fd;
+      border-radius: 100px;
+      padding: 1px 10px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    /* ── Footer ── */
+    .page-footer {
+      text-align: center;
+      margin-top: 56px;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      animation: fadeUp 0.5s 0.3s ease both;
+    }
+    .page-footer .brand {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      background: linear-gradient(135deg, #4f8ef7, #7c3aed);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    /* ── Animations ── */
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .section:nth-child(1)  { animation-delay: 0.05s; }
+    .section:nth-child(2)  { animation-delay: 0.10s; }
+    .section:nth-child(3)  { animation-delay: 0.15s; }
+    .section:nth-child(4)  { animation-delay: 0.20s; }
+    .section:nth-child(5)  { animation-delay: 0.25s; }
+    .section:nth-child(6)  { animation-delay: 0.30s; }
+    .section:nth-child(7)  { animation-delay: 0.35s; }
+    .section:nth-child(8)  { animation-delay: 0.40s; }
+    .section:nth-child(9)  { animation-delay: 0.45s; }
+    .section:nth-child(10) { animation-delay: 0.50s; }
+    .section:nth-child(11) { animation-delay: 0.55s; }
+    .section:nth-child(12) { animation-delay: 0.60s; }
+    .section:nth-child(13) { animation-delay: 0.65s; }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- ── Header ── -->
+  <header class="page-header">
+    <div class="badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+      Legal &amp; Terms
+    </div>
+    <h1>1Mile Terms of Service</h1>
+    <p class="meta">Effective date: June 19, 2026</p>
+  </header>
+
+  <!-- ── TOC ── -->
+  <nav class="toc" aria-label="Table of contents">
+    <p class="toc-title">Table of Contents</p>
+    <ol>
+      <li><a href="#s1"><span class="num">1</span>Acceptance</a></li>
+      <li><a href="#s2"><span class="num">2</span>What 1Mile Provides</a></li>
+      <li><a href="#s3"><span class="num">3</span>Database Coverage</a></li>
+      <li><a href="#s4"><span class="num">4</span>Transit Estimates</a></li>
+      <li><a href="#s5"><span class="num">5</span>No Transit Responsibility</a></li>
+      <li><a href="#s6"><span class="num">6</span>Bus Contributions</a></li>
+      <li><a href="#s7"><span class="num">7</span>User-Generated Content</a></li>
+      <li><a href="#s8"><span class="num">8</span>Location, Photos &amp; Sign-In</a></li>
+      <li><a href="#s9"><span class="num">9</span>Healthcare &amp; Emergency</a></li>
+      <li><a href="#s10"><span class="num">10</span>Weather &amp; Calendar</a></li>
+      <li><a href="#s11"><span class="num">11</span>Account Deletion</a></li>
+      <li><a href="#s12"><span class="num">12</span>Changes</a></li>
+      <li><a href="#s13"><span class="num">13</span>Contact</a></li>
+    </ol>
+  </nav>
+
+  <!-- ── Intro notice ── -->
+  <div class="notice">
+    These Terms of Service ("Terms") apply to the <strong>1Mile Android app</strong> ("1Mile", "the app", "we", "our", or "us"). 1Mile is a hyperlocal utility app built around Purulia district, West Bengal, with weather, transit discovery, Bengali calendar information, healthcare directory information, and community bus contribution.
+  </div>
+
+  <!-- ── Pre-release warning ── -->
+  <div class="warn-box">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+    <span>Before Play Store release, replace this placeholder with the official developer/legal entity and contact: <span class="placeholder">[developer name, address if required, support email, public support URL, and WhatsApp support channel]</span>.</span>
+  </div>
+
+  <!-- ── Sections ── -->
+  <main>
+
+    <!-- 1. Acceptance -->
+    <section class="section" id="s1">
+      <div class="section-title"><span class="section-num">1</span><h2>Acceptance</h2></div>
+      <p>By using 1Mile, you agree to these Terms. If you do not agree, do not use the app. If you use Google sign-in to contribute bus information, edit route information, register local medicine interest, or manage a profile, you also agree that the information you submit must be accurate and lawful.</p>
+    </section>
+
+    <!-- 2. What 1Mile Provides -->
+    <section class="section" id="s2">
+      <div class="section-title"><span class="section-num">2</span><h2>What 1Mile Provides</h2></div>
+      <p>1Mile provides local information utilities for Purulia, including:</p>
+      <ul>
+        <li>Weather forecasts and Bengali local-weather insight</li>
+        <li>Transit discovery, route search, journey planning, nearby bus estimates, and community-built bus data</li>
+        <li>Bengali calendar and Panjika information</li>
+        <li>Healthcare directory information such as doctors, hospitals, emergency numbers, and one-tap dialer actions</li>
+        <li>A frozen Local Medicine interest surface that may collect interest for a possible future service</li>
+        <li>AI-assisted and manual bus contribution tools</li>
+      </ul>
+      <p>The app is informational and community-powered. It is <strong>not</strong> an official government, transport authority, bus operator, hospital, pharmacy, or emergency-response service unless a specific official relationship is expressly stated.</p>
+    </section>
+
+    <!-- 3. Database Coverage -->
+    <section class="section" id="s3">
+      <div class="section-title"><span class="section-num">3</span><h2>Database Coverage and Scope</h2></div>
+      <div class="info-box">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <span>Currently, our database projects and supports only <strong>2,626 villages</strong> from the Purulia district. Hyperlocal features, map projections, directory services, and transit calculations are limited to this covered scope. Data for other districts, regions, or additional villages is not available at this time.</span>
+      </div>
+    </section>
+
+    <!-- 4. Transit Estimates -->
+    <section class="section" id="s4">
+      <div class="section-title"><span class="section-num">4</span><h2>Transit Estimates Are Not Real-Time Tracking</h2></div>
+      <p>1Mile does <strong>not</strong> track buses in real time. The app does not receive live GPS locations from buses or operators.</p>
+      <p>Bus routes, stop times, "next arrival" labels, journey plans, status labels, and map results are <strong>estimates</strong> generated from community contributions, past data, timetable or route-board images submitted by users, route geometry, cached data, and algorithmic calculations.</p>
+      <p>Villages, stops, route lines, route shapes, discovery points, and bus paths may be projected onto Google Maps by 1Mile using community data, local datasets, and algorithmic calculation. These projected map points are not necessarily native Google Maps place data, official transport-authority data, or true verified ground locations.</p>
+      <p>Google Maps may provide the base map and map display technology, but <strong>Google is not responsible</strong> for 1Mile's projected village, stop, route, timing, or bus-location disparities. If you find a village, stop, route point, or bus path projected incorrectly on the map, contact us immediately through the official support email and WhatsApp support channel so we can review and correct it.</p>
+      <div class="caution-box">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <span>Under normal circumstances, a bus estimate may differ by about <strong>&plusmn;30 minutes</strong>. The difference may be greater because of road conditions, traffic, weather, festivals, market days, mechanical issues, operator decisions, missing data, bad source photos, route changes, no trip on that day, a bus not being in service that day, temporary suspension, or permanent discontinuation of a bus service.</span>
+      </div>
+      <p>You are responsible for verifying important travel locally, leaving a buffer, and <strong>not relying on 1Mile as the sole source for time-critical travel.</strong></p>
+    </section>
+
+    <!-- 5. No Responsibility -->
+    <section class="section" id="s5">
+      <div class="section-title"><span class="section-num">5</span><h2>No Responsibility For Transit Disparity</h2></div>
+      <p>To the maximum extent permitted by law, 1Mile is not responsible for loss, delay, missed travel, missed appointments, extra fares, expenses, inconvenience, safety issues, or any other harm arising from:</p>
+      <ul>
+        <li>A bus being late, early, full, cancelled, diverted, or unavailable</li>
+        <li>A bus having no trip on a particular day</li>
+        <li>A bus not being in service that day</li>
+        <li>A bus route being changed, shortened, extended, or stopped</li>
+        <li>A bus service being permanently discontinued</li>
+        <li>Incorrect, outdated, incomplete, or duplicated community-contributed data</li>
+        <li>Algorithmic timing, route, status, or walking-distance estimates</li>
+        <li>Algorithmically projected villages, stops, route shapes, paths, or map coordinates being inaccurate, approximate, misplaced, or outdated</li>
+        <li>Assuming that a Google Maps display means a stop, village, route, or bus position was verified by Google</li>
+        <li>Weather, calendar, healthcare, or emergency contact information being delayed, incorrect, or unavailable</li>
+      </ul>
+      <p>1Mile is a local information aid. It is <strong>not a guarantee</strong> that a bus will arrive, run, stop, accept passengers, or follow the displayed route.</p>
+    </section>
+
+    <!-- 6. Bus Contributions -->
+    <section class="section" id="s6">
+      <div class="section-title"><span class="section-num">6</span><h2>Bus Contributions And Edits</h2></div>
+      <p>The bus map grows because riders and local contributors add and correct information. When you contribute, you may use a route-board photo, timetable photo, handwritten route list, AI extraction, manual drafting, route plotting, HITL review, duplicate shield, publish preferences, and edit tools for existing buses.</p>
+      <p>When you add a new bus or edit an existing bus, including by using a bus-name search/edit flow, you are responsible for:</p>
+      <ul>
+        <li>Submitting only information you believe is true and useful</li>
+        <li>Checking AI-extracted drafts before plotting or publishing</li>
+        <li>Verifying the correct bus, direction, registration number, route, stops, and timing before changing an existing record</li>
+        <li>Checking projected stop, village, and route-map positions before submitting or publishing route geometry</li>
+        <li>Avoiding accidental edits to a different bus with the same or similar name</li>
+        <li>Not uploading private personal data, faces, medical documents, unrelated images, abusive content, or copyrighted content you are not allowed to share</li>
+        <li>Correcting mistakes promptly when you discover them</li>
+      </ul>
+      <p>We reserve the right to edit or remove any bus or transit information contributed by a user. Specifically, we may review, reject, correct, hide, remove, merge, preserve, or roll back bus contributions when needed to protect riders, prevent duplicates, fix errors, investigate abuse, maintain audit history, or comply with law.</p>
+    </section>
+
+    <!-- 7. UGC Rules -->
+    <section class="section" id="s7">
+      <div class="section-title"><span class="section-num">7</span><h2>User-Generated Content Rules</h2></div>
+      <p>Bus contributions and route edits are user-generated content when they become visible or useful to other users. You must not submit content that is false, misleading, malicious, spam, abusive, discriminatory, illegal, sexually explicit, harassing, privacy-invasive, or unrelated to the Purulia transit map.</p>
+      <p>You give 1Mile permission to store, process, adapt, publish, display, moderate, and use your submitted route data, images, edits, and related metadata to operate and improve the community transit service.</p>
+      <div class="warn-box">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <span>Before Play Store release, the app should provide an in-app way to report objectionable or incorrect public contribution content. Until that is implemented, use the official support contact placeholder above.</span>
+      </div>
+    </section>
+
+    <!-- 8. Location, Photos, Sign-In -->
+    <section class="section" id="s8">
+      <div class="section-title"><span class="section-num">8</span><h2>Location, Photos, Camera, And Google Sign-In</h2></div>
+      <p>Most of 1Mile can be used without an account. Google sign-in is requested for contribution and account-linked actions so that edits can be attributed, reviewed, and protected from abuse.</p>
+      <p>Location permission is used only when you ask the app to use your location for nearby transit discovery. <strong>1Mile is not a background bus or user location tracker.</strong></p>
+      <p>Camera or photo access is used only when you choose to provide an image, such as a route board, timetable, handwritten route list, or profile picture.</p>
+    </section>
+
+    <!-- 9. Healthcare -->
+    <section class="section" id="s9">
+      <div class="section-title"><span class="section-num">9</span><h2>Healthcare And Emergency Information</h2></div>
+      <div class="caution-box">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <span>Healthcare information in 1Mile is directory information only. 1Mile is <strong>not a medical device and does not diagnose, treat, cure, or prevent any medical condition</strong>. It does not replace professional medical advice, diagnosis, treatment, ambulance dispatch, hospital triage, or emergency response.</span>
+      </div>
+      <p>Always consult a qualified healthcare professional for medical advice, diagnosis, or treatment. In an emergency, contact emergency services directly.</p>
+      <p>Doctor availability, chamber timings, fees, phone numbers, hospital bed counts, and emergency contacts may change without notice. Verify critical information before relying on it.</p>
+    </section>
+
+    <!-- 10. Weather & Calendar -->
+    <section class="section" id="s10">
+      <div class="section-title"><span class="section-num">10</span><h2>Weather And Calendar Information</h2></div>
+      <p>Weather and calendar information is provided for general local awareness. Forecasts, local weather insight, tithi, festival, astronomy, and date information may be delayed, approximate, or wrong. Do not use the app as the only source for life-safety, agriculture-critical, travel-critical, medical, legal, religious, or financial decisions.</p>
+    </section>
+
+    <!-- 11. Account Deletion -->
+    <section class="section" id="s11">
+      <div class="section-title"><span class="section-num">11</span><h2>Account Deletion And Contribution Records</h2></div>
+      <p>If you delete your account from the app, your personal profile is anonymized and your local session is cleared. Published route facts and limited contribution audit records may be retained when needed for community transit integrity, security, fraud prevention, dispute resolution, or legal compliance. Contact us through the official support contact to request review of contribution data linked to you.</p>
+    </section>
+
+    <!-- 12. Changes -->
+    <section class="section" id="s12">
+      <div class="section-title"><span class="section-num">12</span><h2>Changes</h2></div>
+      <p>We may update these Terms as the app changes. The updated version should be made available in the app and through the public Play Store privacy/support surface.</p>
+    </section>
+
+    <!-- 13. Contact -->
+    <section class="section" id="s13">
+      <div class="section-title"><span class="section-num">13</span><h2>Contact</h2></div>
+      <div class="warn-box">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <span>Before Play Store release, replace this placeholder with the official support contact: <span class="placeholder">[support email, public support URL, and WhatsApp support channel]</span>.</span>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer class="page-footer">
+    <span class="brand">1Mile</span>
+    &copy; 2026 1Mile. All rights reserved. &nbsp;&middot;&nbsp; Effective June 19, 2026
+  </footer>
+
+</div>
+</body>
+</html>
