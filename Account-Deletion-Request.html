@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Account Deletion Request - 1Mile</title>
+  <meta name="description"
+    content="Submit a request to delete your 1Mile account. Contact our support team to initiate the account deletion process." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-body: #f8fafc;
+      --bg-surface: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #475569;
+      --text-light: #64748b;
+      --accent: #2563eb;
+      --accent-muted: #eff6ff;
+      --border: #e2e8f0;
+      --warn-bg: #fffbeb;
+      --warn-border: #fde68a;
+      --warn-text: #b45309;
+      --success-bg: #f0fdf4;
+      --success-border: #dcfce7;
+      --success-text: #166534;
+      --radius: 8px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      line-height: 1.625;
+      padding: 40px 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      background-color: var(--bg-surface);
+      padding: 40px 48px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 16px 8px;
+      }
+      .container {
+        padding: 24px 20px;
+      }
+    }
+
+    .header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 24px;
+      margin-bottom: 32px;
+    }
+
+    .header h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+
+    .intro-box {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+    }
+
+    .info-box {
+      background-color: var(--accent-muted);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin-bottom: 32px;
+    }
+
+    .info-box h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 12px;
+    }
+
+    .contact-item {
+      margin-bottom: 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .contact-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .contact-label {
+      font-weight: 600;
+      color: var(--text-main);
+      min-width: 80px;
+    }
+
+    .contact-value {
+      color: var(--text-muted);
+    }
+
+    .contact-value a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-value a:hover {
+      text-decoration: underline;
+    }
+
+    .section {
+      margin-bottom: 32px;
+    }
+
+    .section-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    p {
+      color: var(--text-muted);
+      font-size: 0.935rem;
+      margin-bottom: 14px;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    ul {
+      margin: 10px 0 16px;
+      padding-left: 20px;
+    }
+
+    ul li {
+      color: var(--text-muted);
+      font-size: 0.935rem;
+      margin-bottom: 8px;
+    }
+
+    strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    .note-box {
+      background-color: var(--success-bg);
+      border: 1px solid var(--success-border);
+      border-radius: var(--radius);
+      padding: 14px 18px;
+      margin-top: 24px;
+      font-size: 0.875rem;
+      color: var(--success-text);
+      line-height: 1.5;
+    }
+
+    .footer {
+      margin-top: 56px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 0.815rem;
+      color: var(--text-light);
+    }
+
+    .footer .brand {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--text-main);
+      display: block;
+      margin-bottom: 4px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Account Deletion Request</h1>
+    </header>
+
+    <p class="intro-box">
+      To delete your 1Mile account, please contact our support team using the information below. We will process your request and guide you through the account deletion process.
+    </p>
+
+    <div class="info-box">
+      <h2>How to Request Account Deletion</h2>
+      <div class="contact-item">
+        <span class="contact-label">Email:</span>
+        <span class="contact-value"><a href="mailto:1mile.support@gmail.com">1mile.support@gmail.com</a></span>
+      </div>
+    </div>
+
+    <main>
+      <section class="section">
+        <h2 class="section-title">What Happens When You Delete Your Account</h2>
+        <p>When you request account deletion, we will:</p>
+        <ul>
+          <li>Anonymize your personal profile information</li>
+          <li>Clear your local session data</li>
+          <li>Remove your account from our system</li>
+          <li>Retain published route facts and limited contribution audit records as needed for community transit integrity, security, fraud prevention, dispute resolution, or legal compliance</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Information We Need</h2>
+        <p>To process your account deletion request, please provide the following in your email:</p>
+        <ul>
+          <li>Your registered email address associated with your 1Mile account</li>
+          <li>Your full name (if different from your profile name)</li>
+          <li>A brief confirmation that you wish to delete your account</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Processing Time</h2>
+        <p>Account deletion requests are typically processed within 5-7 business days. You will receive a confirmation email once your account has been successfully deleted.</p>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Questions or Concerns</h2>
+        <p>If you have any questions about the account deletion process or our data handling practices, please reach out to us at <strong>1mile.support@gmail.com</strong>. Our support team is happy to help.</p>
+      </section>
+
+      <div class="note-box">
+        <strong>Note:</strong> Account deletion is permanent and cannot be undone. Please ensure you have downloaded or saved any important information from your account before requesting deletion.
+      </div>
+    </main>
+
+    <footer class="footer">
+      <span class="brand">1Mile</span>
+      &copy; 2026 1Mile. All rights reserved. &nbsp;&middot;&nbsp; Account Deletion Request
+    </footer>
+  </div>
+</body>
+
+</html>
