@@ -1,396 +1,363 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>1Mile Privacy Policy</title>
-  <meta name="description" content="1Mile Privacy Policy — How 1Mile accesses, collects, uses, stores, shares, and deletes your data on the Android app." />
+  <meta name="description"
+    content="1Mile Privacy Policy — How 1Mile accesses, collects, uses, stores, shares, and deletes your data on the Android app." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg-primary: #0b0f1a;
-      --bg-secondary: #111827;
-      --bg-card: #161d2e;
-      --bg-card-hover: #1c2540;
-      --accent: #4f8ef7;
-      --accent-soft: rgba(79, 142, 247, 0.12);
-      --accent-glow: rgba(79, 142, 247, 0.25);
-      --accent-2: #7c3aed;
-      --text-primary: #f0f4ff;
-      --text-secondary: #94a3c4;
-      --text-muted: #5a6a8a;
-      --border: rgba(79, 142, 247, 0.15);
-      --border-soft: rgba(255, 255, 255, 0.06);
-      --radius-lg: 16px;
-      --radius-md: 10px;
-      --radius-sm: 6px;
+      --bg-body: #f8fafc;
+      --bg-surface: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #475569;
+      --text-light: #64748b;
+      --accent: #2563eb;
+      --accent-muted: #eff6ff;
+      --border: #e2e8f0;
+      --warn-bg: #fffbeb;
+      --warn-border: #fde68a;
+      --warn-text: #b45309;
+      --radius: 8px;
     }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg-primary);
-      color: var(--text-primary);
-      line-height: 1.75;
-      min-height: 100vh;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      line-height: 1.625;
+      padding: 40px 16px;
+      -webkit-font-smoothing: antialiased;
     }
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background:
-        radial-gradient(ellipse 80% 60% at 20% 10%, rgba(79,142,247,0.08) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 50% at 80% 80%, rgba(124,58,237,0.06) 0%, transparent 60%);
-      pointer-events: none;
-      z-index: 0;
-    }
-    .wrapper {
-      position: relative;
-      z-index: 1;
-      max-width: 820px;
+
+    .container {
+      max-width: 760px;
       margin: 0 auto;
-      padding: 48px 24px 80px;
-    }
-    .page-header {
-      text-align: center;
-      margin-bottom: 56px;
-      animation: fadeDown 0.6s ease both;
-    }
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--accent-soft);
+      background-color: var(--bg-surface);
+      padding: 40px 48px;
+      border-radius: var(--radius);
       border: 1px solid var(--border);
-      color: var(--accent);
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 6px 14px;
-      border-radius: 100px;
-      margin-bottom: 20px;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
     }
-    .badge svg { width: 14px; height: 14px; flex-shrink: 0; }
-    .page-header h1 {
-      font-family: 'Outfit', sans-serif;
-      font-size: clamp(2rem, 5vw, 3rem);
-      font-weight: 800;
-      background: linear-gradient(135deg, #f0f4ff 0%, #4f8ef7 60%, #7c3aed 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      line-height: 1.15;
-      margin-bottom: 14px;
+
+    @media (max-width: 640px) {
+      body {
+        padding: 16px 8px;
+      }
+      .container {
+        padding: 24px 20px;
+      }
     }
-    .page-header .meta {
-      font-size: 0.875rem;
-      color: var(--text-muted);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
+
+    .header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 24px;
+      margin-bottom: 32px;
     }
-    .page-header .meta::before, .page-header .meta::after {
-      content: '';
-      display: block;
-      height: 1px;
-      width: 40px;
-      background: var(--border-soft);
-    }
-    .toc {
-      background: var(--bg-card);
-      border: 1px solid var(--border-soft);
-      border-radius: var(--radius-lg);
-      padding: 28px 32px;
-      margin-bottom: 40px;
-      animation: fadeUp 0.5s 0.1s ease both;
-    }
-    .toc-title {
-      font-size: 0.7rem;
+
+    .header h1 {
+      font-size: 1.75rem;
       font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 16px;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
     }
-    .toc ol {
+
+    .header .meta {
+      font-size: 0.875rem;
+      color: var(--text-light);
+    }
+
+    .intro-box {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+    }
+
+    .alert {
+      background-color: var(--warn-bg);
+      border: 1px solid var(--warn-border);
+      border-radius: var(--radius);
+      padding: 14px 18px;
+      margin-bottom: 32px;
+      font-size: 0.875rem;
+      color: var(--warn-text);
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      line-height: 1.5;
+    }
+
+    .alert svg {
+      flex-shrink: 0;
+      margin-top: 2px;
+      stroke: var(--warn-text);
+    }
+
+    .placeholder {
+      background-color: rgba(180, 83, 9, 0.08);
+      font-family: monospace;
+      padding: 2px 4px;
+      border-radius: 4px;
+      font-size: 0.875em;
+      font-weight: 500;
+    }
+
+    .toc-container {
+      background-color: var(--bg-body);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin-bottom: 40px;
+    }
+
+    .toc-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-light);
+      margin-bottom: 12px;
+    }
+
+    .toc-grid {
       list-style: none;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 6px 24px;
+      gap: 8px 24px;
     }
-    @media (max-width: 520px) { .toc ol { grid-template-columns: 1fr; } }
-    .toc ol li a {
-      color: var(--text-secondary);
+
+    @media (max-width: 540px) {
+      .toc-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .toc-grid a {
+      color: var(--accent);
       text-decoration: none;
       font-size: 0.875rem;
+      font-weight: 500;
+      display: inline-block;
+    }
+
+    .toc-grid a:hover {
+      text-decoration: underline;
+    }
+
+    .section {
+      margin-bottom: 40px;
+      scroll-margin-top: 24px;
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 16px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
       display: flex;
       align-items: center;
       gap: 8px;
-      padding: 4px 0;
-      transition: color 0.2s;
     }
-    .toc ol li a:hover { color: var(--accent); }
-    .toc ol li a .num {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 22px;
-      height: 22px;
-      background: var(--accent-soft);
-      border-radius: 50%;
-      font-size: 0.7rem;
-      font-weight: 700;
-      color: var(--accent);
-      flex-shrink: 0;
-    }
-    .notice {
-      background: linear-gradient(135deg, rgba(79,142,247,0.08), rgba(124,58,237,0.08));
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 24px 28px;
-      margin-bottom: 40px;
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      animation: fadeUp 0.5s 0.15s ease both;
-    }
-    .notice strong { color: var(--text-primary); }
-    .warn-box {
-      background: rgba(234,179,8,0.07);
-      border: 1px solid rgba(234,179,8,0.25);
-      border-radius: var(--radius-md);
-      padding: 16px 20px;
-      margin: 16px 0;
-      font-size: 0.875rem;
-      color: #f5d060;
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-    }
-    .warn-box svg { flex-shrink: 0; margin-top: 2px; }
-    .section {
-      background: var(--bg-card);
-      border: 1px solid var(--border-soft);
-      border-radius: var(--radius-lg);
-      padding: 32px 36px;
-      margin-bottom: 24px;
-      transition: border-color 0.25s, box-shadow 0.25s;
-      animation: fadeUp 0.5s ease both;
-    }
-    .section:hover {
-      border-color: var(--border);
-      box-shadow: 0 4px 32px var(--accent-glow);
-    }
-    @media (max-width: 600px) { .section { padding: 24px 20px; } }
-    .section-title {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 18px;
-    }
-    .section-num {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 36px;
-      height: 36px;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      border-radius: 10px;
-      font-family: 'Outfit', sans-serif;
-      font-weight: 700;
-      font-size: 0.85rem;
-      color: #fff;
-      flex-shrink: 0;
-      box-shadow: 0 0 14px var(--accent-glow);
-    }
-    .section-title h2 {
-      font-family: 'Outfit', sans-serif;
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--text-primary);
-    }
-    h3 {
-      font-family: 'Outfit', sans-serif;
+
+    .section h3 {
       font-size: 0.95rem;
       font-weight: 600;
-      color: var(--accent);
-      margin: 22px 0 10px;
+      color: var(--text-main);
+      margin: 24px 0 8px;
+      text-transform: uppercase;
       letter-spacing: 0.02em;
     }
+
     p {
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-      margin-bottom: 12px;
-    }
-    p:last-child { margin-bottom: 0; }
-    ul {
-      list-style: none;
-      margin: 10px 0 12px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-    ul li {
-      color: var(--text-secondary);
-      font-size: 0.875rem;
-      padding-left: 20px;
-      position: relative;
-    }
-    ul li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 10px;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--accent);
-      opacity: 0.7;
-    }
-    strong { color: var(--text-primary); font-weight: 600; }
-    hr { border: none; border-top: 1px solid var(--border-soft); margin: 20px 0; }
-    .placeholder {
-      background: rgba(234,179,8,0.12);
-      border: 1px solid rgba(234,179,8,0.3);
-      color: #f5d060;
-      border-radius: 4px;
-      padding: 1px 6px;
-      font-size: 0.85em;
-      font-style: italic;
-    }
-    .page-footer {
-      text-align: center;
-      margin-top: 56px;
       color: var(--text-muted);
-      font-size: 0.8rem;
-      animation: fadeUp 0.5s 0.3s ease both;
+      font-size: 0.935rem;
+      margin-bottom: 14px;
     }
-    .page-footer .brand {
-      font-family: 'Outfit', sans-serif;
-      font-weight: 700;
-      font-size: 1.1rem;
-      background: linear-gradient(135deg, #4f8ef7, #7c3aed);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      display: block;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    ul {
+      margin: 10px 0 16px;
+      padding-left: 20px;
+    }
+
+    ul li {
+      color: var(--text-muted);
+      font-size: 0.935rem;
       margin-bottom: 6px;
     }
-    @keyframes fadeDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to   { opacity: 1; transform: translateY(0); }
+
+    ul li:last-child {
+      margin-bottom: 0;
     }
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(16px); }
-      to   { opacity: 1; transform: translateY(0); }
+
+    strong {
+      color: var(--text-main);
+      font-weight: 600;
     }
-    .section:nth-child(1)  { animation-delay: 0.05s; }
-    .section:nth-child(2)  { animation-delay: 0.10s; }
-    .section:nth-child(3)  { animation-delay: 0.15s; }
-    .section:nth-child(4)  { animation-delay: 0.20s; }
-    .section:nth-child(5)  { animation-delay: 0.25s; }
-    .section:nth-child(6)  { animation-delay: 0.30s; }
-    .section:nth-child(7)  { animation-delay: 0.35s; }
-    .section:nth-child(8)  { animation-delay: 0.40s; }
-    .section:nth-child(9)  { animation-delay: 0.45s; }
-    .section:nth-child(10) { animation-delay: 0.50s; }
-    .section:nth-child(11) { animation-delay: 0.55s; }
-    .section:nth-child(12) { animation-delay: 0.60s; }
+
+    .footer {
+      margin-top: 56px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 0.815rem;
+      color: var(--text-light);
+    }
+
+    .footer .brand {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--text-main);
+      display: block;
+      margin-bottom: 4px;
+    }
   </style>
 </head>
+
 <body>
-  <div class="wrapper">
-    <header class="page-header">
-      <div class="badge">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        Privacy &amp; Data
-      </div>
+  <div class="container">
+    <header class="header">
       <h1>1Mile Privacy Policy</h1>
       <p class="meta">Effective date: June 19, 2026</p>
     </header>
 
-    <nav class="toc" aria-label="Table of contents">
+    <p class="intro-box">
+      This Privacy Policy explains how <strong>1Mile</strong> ("1Mile", "the app", "we", "our", or "us") accesses,
+      collects, uses, stores, shares, and deletes data. It is written for the 1Mile Android app intended for Google
+      Play.
+    </p>
+
+    <div class="alert">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+        <line x1="12" y1="9" x2="12" y2="13" />
+        <line x1="12" y1="17" x2="12.01" y2="17" />
+      </svg>
+      <div>
+        Before Play Store release, replace this placeholder with the official developer/legal entity and privacy
+        contact: <span class="placeholder">[developer name, privacy email, public privacy/contact URL, and WhatsApp
+          support channel]</span>. Google Play also requires the Privacy Policy to be available on an active, public,
+        non-geofenced, non-editable URL that is not a PDF.
+      </div>
+    </div>
+
+    <nav class="toc-container" aria-label="Table of contents">
       <p class="toc-title">Table of Contents</p>
-      <ol>
-        <li><a href="#s1"><span class="num">1</span>Summary</a></li>
-        <li><a href="#s2"><span class="num">2</span>Data We Collect</a></li>
-        <li><a href="#s3"><span class="num">3</span>How We Use Data</a></li>
-        <li><a href="#s4"><span class="num">4</span>Sharing &amp; Providers</a></li>
-        <li><a href="#s5"><span class="num">5</span>Transit Data Visibility</a></li>
-        <li><a href="#s6"><span class="num">6</span>Data Retention</a></li>
-        <li><a href="#s7"><span class="num">7</span>Account Deletion</a></li>
-        <li><a href="#s8"><span class="num">8</span>Security</a></li>
-        <li><a href="#s9"><span class="num">9</span>Children</a></li>
-        <li><a href="#s10"><span class="num">10</span>Healthcare Disclaimer</a></li>
-        <li><a href="#s11"><span class="num">11</span>Changes</a></li>
-        <li><a href="#s12"><span class="num">12</span>Contact</a></li>
+      <ol class="toc-grid">
+        <li><a href="#s1">1. Summary</a></li>
+        <li><a href="#s2">2. Data We Collect</a></li>
+        <li><a href="#s3">3. How We Use Data</a></li>
+        <li><a href="#s4">4. Sharing &amp; Providers</a></li>
+        <li><a href="#s5">5. Transit Data Visibility</a></li>
+        <li><a href="#s6">6. Data Retention</a></li>
+        <li><a href="#s7">7. Account Deletion</a></li>
+        <li><a href="#s8">8. Security</a></li>
+        <li><a href="#s9">9. Children</a></li>
+        <li><a href="#s10">10. Healthcare Disclaimer</a></li>
+        <li><a href="#s11">11. Changes</a></li>
+        <li><a href="#s12">12. Contact</a></li>
       </ol>
     </nav>
 
-    <div class="notice">
-      This Privacy Policy explains how <strong>1Mile</strong> ("1Mile", "the app", "we", "our", or "us") accesses, collects, uses, stores, shares, and deletes data. It is written for the 1Mile Android app intended for Google Play.
-    </div>
-
-    <div class="warn-box">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-      <span>Before Play Store release, replace this placeholder with the official developer/legal entity and privacy contact: <span class="placeholder">[developer name, privacy email, public privacy/contact URL, and WhatsApp support channel]</span>. Google Play also requires the Privacy Policy to be available on an active, public, non-geofenced, non-editable URL that is not a PDF.</span>
-    </div>
-
     <main>
       <section class="section" id="s1">
-        <div class="section-title"><span class="section-num">1</span><h2>Summary</h2></div>
-        <p>Most of 1Mile can be used without signing in. Google sign-in is used mainly for bus contribution, route editing, profile, and account-linked actions. The app uses foreground location only when you request nearby transit discovery. The app does not track buses in real time and does not track user location in the background.</p>
+        <h2 class="section-title">1. Summary</h2>
+        <p>Most of 1Mile can be used without signing in. Google sign-in is used mainly for bus contribution, route
+          editing, profile, and account-linked actions. The app uses foreground location only when you request nearby
+          transit discovery. The app does not track buses in real time and does not track user location in the
+          background.</p>
         <p><strong>We do not sell personal or sensitive user data.</strong></p>
       </section>
 
       <section class="section" id="s2">
-        <div class="section-title"><span class="section-num">2</span><h2>Data We Collect Or Access</h2></div>
+        <h2 class="section-title">2. Data We Collect Or Access</h2>
+        
         <h3>Account And Sign-In Data</h3>
-        <p>When you sign in with Google, we may receive and store account identifiers such as your user ID and email address. We use this to identify bus contributors, manage contribution history, prevent abuse, and support account features.</p>
-        <hr />
+        <p>When you sign in with Google, we may receive and store account identifiers such as your user ID and email
+          address. We use this to identify bus contributors, manage contribution history, prevent abuse, and support
+          account features.</p>
+        
         <h3>Transit Contribution Data</h3>
         <p>When you add or edit bus data, we may collect and store:</p>
         <ul>
           <li>Contributor user ID and account-linked metadata</li>
           <li>Contributor name, email, and avatar/display data when provided by account/profile systems</li>
-          <li>Bus name, registration number, route summary, direction, origin, destination, stops, stop order, timings, coordinates, route geometry, and route polyline</li>
-          <li>Algorithmically projected village, stop, route, path, and map-coordinate data used to display routes on Google Maps</li>
-          <li>Contribution ID, draft ID, app version, local master data version, publish preference, status, review notes, changed fields, timestamps, reviewer comments, duplicate checks, and audit history</li>
+          <li>Bus name, registration number, route summary, direction, origin, destination, stops, stop order, timings,
+            coordinates, route geometry, and route polyline</li>
+          <li>Algorithmically projected village, stop, route, path, and map-coordinate data used to display routes on
+            Google Maps</li>
+          <li>Contribution ID, draft ID, app version, local master data version, publish preference, status, review
+            notes, changed fields, timestamps, reviewer comments, duplicate checks, and audit history</li>
           <li>AI extraction chat/session metadata and route draft data</li>
         </ul>
-        <p>Some of this contribution data may become visible to other users as part of the public community transit map, search results, bus cards, contributor credits, or editor history.</p>
-        <hr />
+        <p>Some of this contribution data may become visible to other users as part of the public community transit map,
+          search results, bus cards, contributor credits, or editor history.</p>
+        
         <h3>Photos And Images You Select</h3>
         <p>If you choose to provide an image, we may process it for the selected feature:</p>
         <ul>
-          <li>Route board, timetable, or handwritten route-list images may be compressed and sent to the transit pipeline or AI route extraction service to create an editable draft.</li>
+          <li>Route board, timetable, or handwritten route-list images may be compressed and sent to the transit
+            pipeline or AI route extraction service to create an editable draft.</li>
           <li>Profile pictures may be uploaded and stored for profile display.</li>
         </ul>
-        <p>Only upload images that are relevant to the feature and that you have the right to share. Avoid including people, private personal data, medical documents, financial data, or unrelated content.</p>
-        <hr />
+        <p>Only upload images that are relevant to the feature and that you have the right to share. Avoid including
+          people, private personal data, medical documents, financial data, or unrelated content.</p>
+        
         <h3>Location Data</h3>
-        <p>If you tap the Location feature in Transit, the app asks for foreground fine or coarse location permission. The app uses your current location to set a map discovery point and find nearby buses or corridors.</p>
+        <p>If you tap the Location feature in Transit, the app asks for foreground fine or coarse location permission.
+          The app uses your current location to set a map discovery point and find nearby buses or corridors.</p>
         <p>1Mile does not use background location permission and does not use your device location to track buses.</p>
-        <p>Google Maps may be used as the base map. The stop, village, route, bus-path, and discovery overlays shown by 1Mile are generated from 1Mile/community data and algorithmic projection. They are not necessarily native Google Maps locations or true verified ground positions. If you find a village or stop projected incorrectly, contact the official support email and WhatsApp support channel immediately so the map data can be reviewed.</p>
-        <hr />
+        <p>Google Maps may be used as the base map. The stop, village, route, bus-path, and discovery overlays shown by
+          1Mile are generated from 1Mile/community data and algorithmic projection. They are not necessarily native
+          Google Maps locations or true verified ground positions. If you find a village or stop projected incorrectly,
+          contact the official support email and WhatsApp support channel immediately so the map data can be reviewed.
+        </p>
+        
         <h3>Weather, Calendar, And Local Data</h3>
-        <p>Weather and calendar features use Purulia-focused data and app caches. Weather is for Purulia and does not require your personal location. The app may cache weather, calendar, village, transit, and route data locally to improve performance and offline behavior.</p>
-        <hr />
+        <p>Weather and calendar features use Purulia-focused data and app caches. Weather is for Purulia and does not
+          require your personal location. The app may cache weather, calendar, village, transit, and route data locally
+          to improve performance and offline behavior.</p>
+        
         <h3>Local Medicine Interest</h3>
-        <p>Medicine delivery operations are currently frozen. If you choose to register interest for a possible future local medicine service while signed in, we may store your user ID, email, profile name, phone number, status, source, timestamps, and optional note.</p>
-        <hr />
+        <p>Medicine delivery operations are currently frozen. If you choose to register interest for a possible future
+          local medicine service while signed in, we may store your user ID, email, profile name, phone number, status,
+          source, timestamps, and optional note.</p>
+        
         <h3>Technical And Diagnostic Data</h3>
-        <p>We may process app version, local data version, service status, cache status, request status, errors, contribution status, and basic logs to operate, secure, debug, and improve the app.</p>
+        <p>We may process app version, local data version, service status, cache status, request status, errors,
+          contribution status, and basic logs to operate, secure, debug, and improve the app.</p>
       </section>
 
       <section class="section" id="s3">
-        <div class="section-title"><span class="section-num">3</span><h2>How We Use Data</h2></div>
+        <h2 class="section-title">3. How We Use Data</h2>
         <p>We use data to:</p>
         <ul>
-          <li>Provide app features such as transit discovery, weather, calendar, healthcare directory, profile, and contribution history</li>
+          <li>Provide app features such as transit discovery, weather, calendar, healthcare directory, profile, and
+            contribution history</li>
           <li>Authenticate signed-in users</li>
           <li>Attribute bus contributions and route edits</li>
           <li>Prevent duplicate, abusive, false, or low-quality route data</li>
@@ -403,79 +370,110 @@
       </section>
 
       <section class="section" id="s4">
-        <div class="section-title"><span class="section-num">4</span><h2>Sharing And Service Providers</h2></div>
+        <h2 class="section-title">4. Sharing And Service Providers</h2>
         <p>We may use service providers to run the app, including:</p>
         <ul>
           <li><strong>Supabase</strong> — authentication, database, profile, contribution, storage, and app backend data</li>
-          <li><strong>Google services</strong> — Google sign-in, Google Maps base-map display, and device location APIs. Google is not responsible for 1Mile's community or algorithmically projected stop, village, route, or bus-path locations.</li>
+          <li><strong>Google services</strong> — Google sign-in, Google Maps base-map display, and device location APIs.
+            Google is not responsible for 1Mile's community or algorithmically projected stop, village, route, or
+            bus-path locations.</li>
           <li><strong>1Mile weather backend</strong> — Purulia weather</li>
           <li><strong>1Mile transit pipeline and AI route extraction service</strong> — contribution processing</li>
           <li><strong>Device apps selected by you</strong> — such as the phone dialer when you tap a call button</li>
         </ul>
-        <p>These providers may process data only as needed to support app functionality, security, legal compliance, or service operation. <strong>We do not sell personal or sensitive user data.</strong></p>
-        <p>We may disclose data if required by law, to respond to valid legal requests, to protect users, to investigate abuse, to enforce our Terms, or as part of a lawful organizational change with appropriate notice.</p>
+        <p>These providers may process data only as needed to support app functionality, security, legal compliance, or
+          service operation. <strong>We do not sell personal or sensitive user data.</strong></p>
+        <p>We may disclose data if required by law, to respond to valid legal requests, to protect users, to investigate
+          abuse, to enforce our Terms, or as part of a lawful organizational change with appropriate notice.</p>
       </section>
 
       <section class="section" id="s5">
-        <div class="section-title"><span class="section-num">5</span><h2>Transit Data Visibility</h2></div>
-        <p>Bus route facts submitted through contributions may become public within the app because the community transit map depends on shared route knowledge. This can include bus name, route, stops, timing estimates, direction, route geometry, contributor credits, editor counts, and audit-derived metadata.</p>
+        <h2 class="section-title">5. Transit Data Visibility</h2>
+        <p>Bus route facts submitted through contributions may become public within the app because the community
+          transit map depends on shared route knowledge. This can include bus name, route, stops, timing estimates,
+          direction, route geometry, contributor credits, editor counts, and audit-derived metadata.</p>
         <p><strong>Do not submit information that you do not want used for the community transit service.</strong></p>
       </section>
 
       <section class="section" id="s6">
-        <div class="section-title"><span class="section-num">6</span><h2>Data Retention</h2></div>
+        <h2 class="section-title">6. Data Retention</h2>
         <p>We retain data only as long as needed for the purposes described above, including:</p>
         <ul>
           <li>Account/session data while your account is active</li>
           <li>Profile data until updated, anonymized, deleted, or no longer needed</li>
           <li>Local app cache until replaced, cleared, or removed by uninstall/device clearing</li>
-          <li>Contribution records while needed for transit integrity, audit, duplicate prevention, dispute handling, abuse prevention, security, or legal compliance</li>
+          <li>Contribution records while needed for transit integrity, audit, duplicate prevention, dispute handling,
+            abuse prevention, security, or legal compliance</li>
           <li>Published route facts while useful to riders and the community transit map</li>
         </ul>
       </section>
 
       <section class="section" id="s7">
-        <div class="section-title"><span class="section-num">7</span><h2>Account Deletion</h2></div>
-        <p>The app includes an account deletion option. When used, the current implementation anonymizes your personal profile and clears your local session. Published route facts and limited contribution audit records may be retained where needed for community transit integrity, security, fraud prevention, dispute resolution, or legal compliance.</p>
-        <div class="warn-box">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-          <span>Before Play Store release, add the official external account deletion/support URL here: <span class="placeholder">[public account deletion URL]</span>.</span>
+        <h2 class="section-title">7. Account Deletion</h2>
+        <p>The app includes an account deletion option. When used, the current implementation anonymizes your personal
+          profile and clears your local session. Published route facts and limited contribution audit records may be
+          retained where needed for community transit integrity, security, fraud prevention, dispute resolution, or
+          legal compliance.</p>
+        <div class="alert" style="margin-top: 16px; margin-bottom: 0;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+            <line x1="12" y1="9" x2="12" y2="13" />
+            <line x1="12" y1="17" x2="12.01" y2="17" />
+          </svg>
+          <div>
+            Before Play Store release, add the official external account deletion/support URL here: <span
+              class="placeholder">[public account deletion URL]</span>.
+          </div>
         </div>
       </section>
 
       <section class="section" id="s8">
-        <div class="section-title"><span class="section-num">8</span><h2>Security</h2></div>
-        <p>We use reasonable safeguards, including HTTPS-based transmission and Android backup exclusion for app data. No system is completely secure, and we cannot guarantee absolute security.</p>
+        <h2 class="section-title">8. Security</h2>
+        <p>We use reasonable safeguards, including HTTPS-based transmission and Android backup exclusion for app data.
+          No system is completely secure, and we cannot guarantee absolute security.</p>
       </section>
 
       <section class="section" id="s9">
-        <div class="section-title"><span class="section-num">9</span><h2>Children</h2></div>
+        <h2 class="section-title">9. Children</h2>
         <p>1Mile is not directed to children. Minors should use the app with parent or guardian guidance.</p>
       </section>
 
       <section class="section" id="s10">
-        <div class="section-title"><span class="section-num">10</span><h2>Healthcare Disclaimer</h2></div>
-        <p>Healthcare information in the app is directory information only. 1Mile is not a medical device and does not diagnose, treat, cure, or prevent any medical condition. The app does not replace medical advice, diagnosis, treatment, emergency services, or professional judgment.</p>
+        <h2 class="section-title">10. Healthcare Disclaimer</h2>
+        <p>Healthcare information in the app is directory information only. 1Mile is not a medical device and does not
+          diagnose, treat, cure, or prevent any medical condition. The app does not replace medical advice, diagnosis,
+          treatment, emergency services, or professional judgment.</p>
       </section>
 
       <section class="section" id="s11">
-        <div class="section-title"><span class="section-num">11</span><h2>Changes</h2></div>
-        <p>We may update this Privacy Policy as the app changes. The effective date will be updated when material changes are made.</p>
+        <h2 class="section-title">11. Changes</h2>
+        <p>We may update this Privacy Policy as the app changes. The effective date will be updated when material
+          changes are made.</p>
       </section>
 
       <section class="section" id="s12">
-        <div class="section-title"><span class="section-num">12</span><h2>Contact</h2></div>
-        <div class="warn-box">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-          <span>Before Play Store release, replace this placeholder with the official privacy contact: <span class="placeholder">[privacy email, public support URL, and WhatsApp support channel]</span>.</span>
+        <h2 class="section-title">12. Contact</h2>
+        <div class="alert" style="margin-bottom: 0;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+            <line x1="12" y1="9" x2="12" y2="13" />
+            <line x1="12" y1="17" x2="12.01" y2="17" />
+          </svg>
+          <div>
+            Before Play Store release, replace this placeholder with the official privacy contact: <span
+              class="placeholder">[privacy email, public support URL, and WhatsApp support channel]</span>.
+          </div>
         </div>
       </section>
     </main>
 
-    <footer class="page-footer">
+    <footer class="footer">
       <span class="brand">1Mile</span>
       &copy; 2026 1Mile. All rights reserved. &nbsp;&middot;&nbsp; Effective June 19, 2026
     </footer>
   </div>
 </body>
+
 </html>
