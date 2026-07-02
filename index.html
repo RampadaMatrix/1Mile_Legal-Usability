@@ -1,71 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1Mile App - Legal Documents</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            background-color: #f9fafb;
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-        .container {
-            width: 100%;
-            max-width: 500px;
-            background: #ffffff;
-            padding: 40px 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            text-align: center;
-        }
-        h1 {
-            color: #111827;
-            margin-bottom: 10px;
-            font-size: 24px;
-        }
-        p {
-            color: #6b7280;
-            margin-bottom: 30px;
-        }
-        .links-wrapper {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        a.btn {
-            display: block;
-            padding: 14px 20px;
-            background-color: #2563eb;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: background-color 0.2s ease;
-        }
-        a.btn:hover {
-            background-color: #1d4ed8;
-        }
-    </style>
-</head>
-<body>
 
-    <div class="container">
-        <h1>1Mile App</h1>
-        <p>Legal & Usability Documents</p>
-        
-        <div class="links-wrapper">
-            <a href="PRIVACY_POLICY.html" class="btn">Privacy Policy</a>
-            <a href="TERMS_OF_SERVICE.html" class="btn">Terms of Service</a>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1Mile Legal & Usability</title>
+  <meta name="description"
+    content="Access 1Mile's legal documents including Privacy Policy, Terms of Service, and Account Deletion Request." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-body: #f8fafc;
+      --bg-surface: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #475569;
+      --text-light: #64748b;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --accent-muted: #eff6ff;
+      --border: #e2e8f0;
+      --radius: 8px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      line-height: 1.625;
+      padding: 40px 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+
+    .header p {
+      font-size: 1.125rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .documents-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    .document-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 24px;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+    }
+
+    .document-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      transform: translateY(-2px);
+    }
+
+    .document-icon {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+    }
+
+    .document-card h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 12px;
+    }
+
+    .document-card p {
+      font-size: 0.935rem;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      flex-grow: 1;
+    }
+
+    .document-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+    }
+
+    .document-link:hover {
+      color: var(--accent-hover);
+      gap: 12px;
+    }
+
+    .document-link::after {
+      content: "→";
+      transition: transform 0.2s ease;
+    }
+
+    .document-link:hover::after {
+      transform: translateX(2px);
+    }
+
+    .footer {
+      border-top: 1px solid var(--border);
+      padding-top: 32px;
+      text-align: center;
+      color: var(--text-light);
+      font-size: 0.875rem;
+    }
+
+    .footer .brand {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--text-main);
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 24px 16px;
+      }
+
+      .header h1 {
+        font-size: 1.875rem;
+      }
+
+      .documents-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .document-card {
+        padding: 24px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>1Mile Legal & Usability</h1>
+      <p>Access our official legal documents and policies</p>
+    </header>
+
+    <div class="documents-grid">
+      <div class="document-card">
+        <div class="document-icon">📋</div>
+        <h2>Privacy Policy</h2>
+        <p>Learn how 1Mile accesses, collects, uses, stores, shares, and deletes your personal data on the Android app.</p>
+        <a href="PRIVACY_POLICY.html" class="document-link">View Privacy Policy</a>
+      </div>
+
+      <div class="document-card">
+        <div class="document-icon">⚖️</div>
+        <h2>Terms of Service</h2>
+        <p>Review the terms and conditions governing the access and use of the 1Mile mobile application.</p>
+        <a href="TERMS_OF_SERVICE.html" class="document-link">View Terms of Service</a>
+      </div>
+
+      <div class="document-card">
+        <div class="document-icon">🗑️</div>
+        <h2>Account Deletion</h2>
+        <p>Learn how to request account deletion and what happens to your data when you delete your 1Mile account.</p>
+        <a href="Account-Deletion-Request.html" class="document-link">Request Deletion</a>
+      </div>
     </div>
 
+    <footer class="footer">
+      <span class="brand">1Mile</span>
+      &copy; 2026 1Mile. All rights reserved.
+    </footer>
+  </div>
 </body>
+
 </html>
