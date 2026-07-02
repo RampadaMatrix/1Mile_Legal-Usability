@@ -14,8 +14,8 @@
     :root {
       --bg-body: #f8fafc;
       --bg-surface: #ffffff;
-      --text-main: #1e293b;
-      --text-muted: #475569;
+      --text-main: #0f172a;
+      --text-muted: #334155;
       --text-light: #64748b;
       --accent: #2563eb;
       --accent-hover: #1d4ed8;
@@ -41,8 +41,9 @@
       background-color: var(--bg-body);
       color: var(--text-main);
       line-height: 1.625;
-      padding: 40px 16px;
+      padding: 60px 24px;
       -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     .container {
@@ -56,15 +57,15 @@
     }
 
     .header h1 {
-      font-size: 2.5rem;
+      font-size: 2.25rem;
       font-weight: 700;
       color: var(--text-main);
-      letter-spacing: -0.02em;
+      letter-spacing: -0.025em;
       margin-bottom: 12px;
     }
 
     .header p {
-      font-size: 1.125rem;
+      font-size: 1.05rem;
       color: var(--text-muted);
       max-width: 600px;
       margin: 0 auto;
@@ -81,22 +82,35 @@
       background-color: var(--bg-surface);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 32px 24px;
+      padding: 32px 28px;
       display: flex;
       flex-direction: column;
-      transition: all 0.3s ease;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
       box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
     }
 
     .document-card:hover {
-      border-color: var(--accent);
-      box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      border-color: #cbd5e1;
+      box-shadow: 0 12px 20px -3px rgba(15, 23, 42, 0.04), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
       transform: translateY(-2px);
     }
 
-    .document-icon {
-      font-size: 2.5rem;
-      margin-bottom: 16px;
+    .icon-container {
+      width: 48px;
+      height: 48px;
+      border-radius: 6px;
+      background-color: var(--bg-body);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      color: var(--text-muted);
+      transition: all 0.25s ease;
+    }
+
+    .document-card:hover .icon-container {
+      background-color: var(--accent-muted);
+      color: var(--accent);
     }
 
     .document-card h2 {
@@ -104,38 +118,37 @@
       font-weight: 600;
       color: var(--text-main);
       margin-bottom: 12px;
+      letter-spacing: -0.01em;
     }
 
     .document-card p {
       font-size: 0.935rem;
       color: var(--text-muted);
-      margin-bottom: 24px;
+      margin-bottom: 28px;
       flex-grow: 1;
     }
 
     .document-link {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
       color: var(--accent);
       text-decoration: none;
       font-weight: 500;
       font-size: 0.95rem;
-      transition: all 0.2s ease;
+      transition: color 0.2s ease;
     }
 
     .document-link:hover {
       color: var(--accent-hover);
-      gap: 12px;
     }
 
-    .document-link::after {
-      content: "→";
+    .document-link svg {
       transition: transform 0.2s ease;
     }
 
-    .document-link:hover::after {
-      transform: translateX(2px);
+    .document-link:hover svg {
+      transform: translateX(3px);
     }
 
     .footer {
@@ -143,24 +156,24 @@
       padding-top: 32px;
       text-align: center;
       color: var(--text-light);
-      font-size: 0.875rem;
+      font-size: 0.815rem;
     }
 
     .footer .brand {
-      font-weight: 700;
-      font-size: 1rem;
+      font-weight: 600;
+      font-size: 0.95rem;
       color: var(--text-main);
       display: block;
-      margin-bottom: 8px;
+      margin-bottom: 4px;
     }
 
     @media (max-width: 640px) {
       body {
-        padding: 24px 16px;
+        padding: 40px 16px;
       }
 
       .header h1 {
-        font-size: 1.875rem;
+        font-size: 1.75rem;
       }
 
       .documents-grid {
@@ -178,36 +191,70 @@
 <body>
   <div class="container">
     <header class="header">
-      <h1>1Mile Legal & Usability</h1>
-      <p>Access our official legal documents and policies</p>
+      <h1>1Mile Legal &amp; Usability</h1>
+      <p>Access official frameworks, structural terms, and account configuration parameters</p>
     </header>
 
     <div class="documents-grid">
+      <!-- Privacy Policy -->
       <div class="document-card">
-        <div class="document-icon">📋</div>
+        <div class="icon-container">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          </svg>
+        </div>
         <h2>Privacy Policy</h2>
-        <p>Learn how 1Mile accesses, collects, uses, stores, shares, and deletes your personal data on the Android app.</p>
-        <a href="PRIVACY_POLICY.html" class="document-link">View Privacy Policy</a>
+        <p>Review policy parameters detailing how we process, store, insulate, and terminate your identity data logs within the mobile environment[cite: 1].</p>
+        <a href="PRIVACY_POLICY.html" class="document-link">
+          <span>View Privacy Policy</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
       </div>
 
+      <!-- Terms of Service -->
       <div class="document-card">
-        <div class="document-icon">⚖️</div>
+        <div class="icon-container">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+          </svg>
+        </div>
         <h2>Terms of Service</h2>
-        <p>Review the terms and conditions governing the access and use of the 1Mile mobile application.</p>
-        <a href="TERMS_OF_SERVICE.html" class="document-link">View Terms of Service</a>
+        <p>Examine the contractual framework, data entry constraints, database scope limitations, and technical liability disclaimers[cite: 2].</p>
+        <a href="TERMS_OF_SERVICE.html" class="document-link">
+          <span>View Terms of Service</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
       </div>
 
+      <!-- Account Deletion -->
       <div class="document-card">
-        <div class="document-icon">🗑️</div>
+        <div class="icon-container">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="3 6 5 6 21 6"></polyline>
+            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+            <line x1="10" y1="11" x2="10" y2="17"></line>
+            <line x1="14" y1="11" x2="14" y2="17"></line>
+          </svg>
+        </div>
         <h2>Account Deletion</h2>
-        <p>Learn how to request account deletion and what happens to your data when you delete your 1Mile account.</p>
-        <a href="Account-Deletion-Request.html" class="document-link">Request Deletion</a>
+        <p>Understand how individual account tracking lines are severed, profile schemas anonymized, and session structures removed safely[cite: 1, 2].</p>
+        <a href="Account-Deletion-Request.html" class="document-link">
+          <span>Request Deletion</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
       </div>
     </div>
 
     <footer class="footer">
       <span class="brand">1Mile</span>
-      &copy; 2026 1Mile. All rights reserved.
+      &copy; 2026 1Mile. All rights reserved. &nbsp;&middot;&nbsp; PRIVACY_POLICY.html &nbsp;&middot;&nbsp; TERMS_OF_SERVICE.html
     </footer>
   </div>
 </body>
